@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Decoplace - Reformas integrales y todo tipo de reformas. Calidad, diseño y profesionalidad.">
+  <meta name="theme-color" content="#171717">
+  <title>Decoplace | Reformas Integrales</title>
+  <style>
+    :root{--dark:#171717;--gold:#c7a26a;--cream:#f7f3ed;--white:#fff;--muted:#6d6d6d}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;color:var(--dark);line-height:1.6;background:#fff}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{position:fixed;top:0;left:0;width:100%;z-index:20;background:rgba(23,23,23,.94);backdrop-filter:blur(10px);color:#fff}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-size:28px;font-weight:800;letter-spacing:2px}.logo span{color:var(--gold)}
+    .links{display:flex;gap:28px;font-size:14px}.links a:hover{color:var(--gold)}
+    .menu{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+    .menu:focus-visible,.btn:focus-visible,.links a:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+    .hero{position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:180px;background:linear-gradient(transparent,rgba(0,0,0,.28));pointer-events:none}
+    .hero-content{position:relative;z-index:1}
+    .trust{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:26px}
+    .trust span{border:1px solid rgba(255,255,255,.28);background:rgba(0,0,0,.22);padding:8px 13px;border-radius:999px;font-size:13px}
+    .card{border-radius:4px}
+    .gallery div{border-radius:3px;position:relative;overflow:hidden}
+    .gallery div:after{content:"Ver proyecto";position:absolute;left:14px;bottom:14px;background:rgba(0,0,0,.62);color:#fff;padding:7px 11px;font-size:12px;opacity:0;transform:translateY(5px);transition:.25s}
+    .gallery div:hover:after{opacity:1;transform:translateY(0)}
+    .whatsapp{position:fixed;right:22px;bottom:22px;z-index:30;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:28px;font-weight:bold;box-shadow:0 10px 25px rgba(0,0,0,.22);transition:.2s}
+    .whatsapp:hover{transform:translateY(-3px)}
+    .mini-note{font-size:13px;color:var(--muted);margin-top:12px}
+    .hero{min-height:100vh;display:grid;place-items:center;color:#fff;text-align:center;
+      background:linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.62)),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85') center/cover}
+    .hero-content{padding-top:76px;max-width:850px}.eyebrow{text-transform:uppercase;letter-spacing:4px;color:#e5c995;font-size:13px;font-weight:bold}
+    h1{font-size:clamp(42px,7vw,78px);line-height:1.05;margin:18px 0}.hero p{font-size:19px;max-width:680px;margin:0 auto 32px;color:#eee}
+    .btn{display:inline-block;background:var(--gold);color:#111;padding:14px 26px;border-radius:3px;font-weight:bold;margin:5px;transition:.2s}
+    .btn:hover{transform:translateY(-2px);background:#dfbd86}.btn.outline{background:transparent;border:1px solid #fff;color:#fff}
+    section{padding:90px 0}.section-head{text-align:center;margin-bottom:48px}.section-head small{color:var(--gold);font-weight:bold;letter-spacing:3px;text-transform:uppercase}
+    .section-head h2{font-size:40px;margin:8px 0 12px}.section-head p{color:var(--muted);max-width:650px;margin:auto}
+    .about{background:var(--cream)}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+    .about-img{height:470px;background:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1100&q=85') center/cover}
+    .about h3{font-size:32px;margin-bottom:16px}.about p{color:#555;margin-bottom:18px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}.feature{background:#fff;padding:24px;border-left:3px solid var(--gold)}
+    .feature b{display:block;margin-bottom:7px}.feature span{color:var(--muted);font-size:14px}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{padding:30px;border:1px solid #e7e2db;background:#fff;transition:.25s}
+    .card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,.08)}.icon{font-size:30px;color:var(--gold);margin-bottom:15px}.card h3{margin-bottom:10px}.card p{color:var(--muted);font-size:15px}
+    .projects{background:var(--dark);color:#fff}.projects .section-head p{color:#bbb}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .gallery div{height:270px;background-size:cover;background-position:center}.g1{background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85')}.g2{background-image:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85')}.g3{background-image:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=85')}
+    .contact{background:var(--cream)}.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px}.contact-info h3{font-size:30px;margin-bottom:15px}.contact-info p{color:var(--muted);margin-bottom:25px}.contact-item{margin:18px 0}.contact-item strong{display:block}.contact-item a{color:#555}.contact-item a:hover{color:var(--gold)}
+    form{background:#fff;padding:32px;box-shadow:0 12px 35px rgba(0,0,0,.06)}input,textarea{width:100%;padding:14px;border:1px solid #ddd;margin-bottom:15px;font:inherit}textarea{min-height:140px;resize:vertical}button.btn{border:0;cursor:pointer;width:100%}
+    footer{background:#111;color:#aaa;text-align:center;padding:28px}.footer-logo{color:#fff;font-weight:800;font-size:22px;letter-spacing:2px;margin-bottom:8px}.footer-logo span{color:var(--gold)}
+    @media(max-width:800px){.links{display:none;position:absolute;top:76px;left:0;width:100%;background:#171717;padding:20px;flex-direction:column;gap:16px}.links.open{display:flex}.menu{display:block}.about-grid,.contact-grid{grid-template-columns:1fr}.services-grid,.gallery{grid-template-columns:1fr 1fr}.features{grid-template-columns:1fr}.about-img{height:330px}}
+    @media(max-width:520px){.services-grid,.gallery{grid-template-columns:1fr}.gallery div{height:240px}section{padding:70px 0}.section-head h2{font-size:32px}}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="container">
+    <a class="logo" href="#inicio">DECO<span>PLACE</span></a>
+    <button class="menu" aria-label="Abrir menú" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+    <div class="links">
+      <a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a><a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="eyebrow">Reformas integrales</div>
+    <h1>Transformamos espacios en hogares.</h1>
+    <p>En Decoplace realizamos todo tipo de reformas con un enfoque profesional, cuidado por los detalles y soluciones adaptadas a cada proyecto.</p>
+    <a class="btn" href="#contacto">Solicitar presupuesto</a>
+    <a class="btn outline" href="tel:687207120">Llámanos</a>
+    <div class="trust"><span>Reformas integrales</span><span>Atención personalizada</span><span>Presupuesto</span></div>
+  </div>
+</section>
+
+<section class="about" id="nosotros">
+  <div class="container about-grid">
+    <div class="about-img"></div>
+    <div>
+      <div class="section-head" style="text-align:left;margin-bottom:20px"><small>Decoplace</small><h2>Reformas pensadas para ti</h2></div>
+      <p>Nos encargamos de tu reforma de principio a fin, cuidando cada fase del proyecto para conseguir un resultado funcional, moderno y acorde con tus necesidades.</p>
+      <p>Desde una renovación puntual hasta una reforma integral, nuestro objetivo es convertir tus ideas en un espacio que puedas disfrutar.</p>
+      <div class="features">
+        <div class="feature"><b>Calidad</b><span>Materiales y acabados cuidados.</span></div>
+        <div class="feature"><b>Profesionalidad</b><span>Trabajo organizado y responsable.</span></div>
+        <div class="feature"><b>Compromiso</b><span>Atención cercana durante el proyecto.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="container">
+    <div class="section-head"><small>Lo que hacemos</small><h2>Todo tipo de reformas</h2><p>Soluciones para renovar, mejorar y transformar cualquier espacio.</p></div>
+    <div class="services-grid">
+      <article class="card"><div class="icon">⌂</div><h3>Reforma integral</h3><p>Planificación y ejecución completa de viviendas y espacios para crear un resultado coherente de principio a fin.</p></article>
+      <article class="card"><div class="icon">▦</div><h3>Cocinas</h3><p>Renovación de cocinas con distribuciones funcionales, acabados actuales y soluciones a medida.</p></article>
+      <article class="card"><div class="icon">◫</div><h3>Baños</h3><p>Reformas de baños, desde el cambio de revestimientos hasta una renovación completa del espacio.</p></article>
+      <article class="card"><div class="icon">✦</div><h3>Interiorismo</h3><p>Mejoramos la estética y funcionalidad de tus espacios con propuestas adaptadas a tu estilo.</p></article>
+      <article class="card"><div class="icon">▱</div><h3>Albañilería</h3><p>Trabajos de distribución, paredes, suelos, revestimientos y otras soluciones de obra.</p></article>
+      <article class="card"><div class="icon">◉</div><h3>Acabados</h3><p>Detalles finales para conseguir un resultado limpio, cuidado y listo para disfrutar.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="proyectos">
+  <div class="container">
+    <div class="section-head"><small>Nuestro trabajo</small><h2>Espacios que inspiran</h2><p>Una selección visual de estilos y acabados para inspirar tu próximo proyecto.</p></div>
+    <div class="gallery"><div class="g1"></div><div class="g2"></div><div class="g3"></div></div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <div class="section-head" style="text-align:left;margin-bottom:20px"><small>Hablemos</small><h2>¿Tienes un proyecto?</h2></div>
+      <p>Cuéntanos qué quieres reformar y nos pondremos en contacto contigo para conocer tu proyecto.</p>
+      <div class="contact-item"><strong>Teléfono</strong><a href="tel:687207120">687 207 120</a></div>
+      <div class="contact-item"><strong>Email</strong><a href="mailto:decoplace140@gmail.com">decoplace140@gmail.com</a></div>
+    </div>
+    <form onsubmit="sendMail(event)">
+      <input id="name" type="text" placeholder="Nombre" required>
+      <input id="phone" type="tel" placeholder="Teléfono" required>
+      <input id="email" type="email" placeholder="Correo electrónico">
+      <textarea id="message" placeholder="Cuéntanos brevemente tu proyecto..." required></textarea>
+      <button class="btn" type="submit">Enviar consulta</button>
+      <div class="mini-note">También puedes llamarnos directamente al 687 207 120.</div>
+    </form>
+  </div>
+</section>
+</main>
+<a class="whatsapp" href="https://wa.me/34687207120" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">☏</a>
+
+<footer>
+  <div class="footer-logo">DECO<span>PLACE</span></div>
+  <div>Reformas integrales · Todo tipo de reformas</div>
+  <div style="margin-top:8px">© 2026 Decoplace. Todos los derechos reservados.</div>
+</footer>
+
+<script>
+function toggleMenu(button){
+  const links=document.querySelector('.links');
+  const open=links.classList.toggle('open');
+  button.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>{
+  document.querySelector('.links').classList.remove('open');
+  const menu=document.querySelector('.menu');
+  if(menu) menu.setAttribute('aria-expanded','false');
+}));
+
+function sendMail(e){
+  e.preventDefault();
+  const n=document.getElementById('name').value, p=document.getElementById('phone').value;
+  const em=document.getElementById('email').value, m=document.getElementById('message').value;
+  const subject=encodeURIComponent('Consulta de reforma - '+n);
+  const body=encodeURIComponent('Nombre: '+n+'\\nTeléfono: '+p+'\\nEmail: '+em+'\\n\\nProyecto:\\n'+m);
+  window.location.href='mailto:decoplace140@gmail.com?subject='+subject+'&body='+body;
+}
+</script>
+</body>
+</html>
